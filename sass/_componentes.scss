@@ -1,0 +1,72 @@
+@use 'mediaQ' as *;
+@use 'color' as *;
+
+
+// menu de navegación
+nav {
+  // mix-blend-mode:saturation;
+  
+  .logo {
+    padding: 1em;
+    img {
+      width: 150px;
+      height: auto;
+      margin-left: 6em;
+      @include tableta_land {
+        margin-left: 2em;
+      }
+      @include cel {
+        margin-left: 0em;
+      }
+    }
+  }
+ 
+  transition: all 300ms ease-in-out;
+}
+
+.scroll-down {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up {
+  background-color: $azul;
+  a {
+    color: $azulOscuro;
+  }
+  .activo {
+    font-weight: bold;
+  }
+
+}
+
+
+
+@mixin boton($azul) {
+  display: inline-block;
+  @if $azul {
+    background-color: $azulOscuro;
+    color: #fff;
+  } @else {
+    background-color: $naranja;
+    color: #fff;
+  }
+  // font-skize: clamp(0.6rem, 0.8rem, 1.5rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: bold;
+  padding: 1rem 2.2rem;
+  margin: 2em 0;
+  border-radius: 100px;
+  transition: ease 0.2s;
+  &:hover{
+    background-color: $azulOscuro;
+    color: $naranja;
+    transform: scale(.95)
+  }
+}
+
+.btn {
+  @include boton(false);
+}
+.btnAzul {
+  @include boton(true);
+}

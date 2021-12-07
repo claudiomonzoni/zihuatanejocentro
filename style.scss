@@ -1,0 +1,398 @@
+@use "sass/forward" as *;
+
+// fuentes
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap");
+
+html {
+  background: url("img/arena-patron.jpg");
+  font-size: clamp(1.1rem, 0.8rem, 4vw);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Montserrat;
+  font-weight: 300;
+  position: relative;
+  color: $azulOscuro;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Montserrat;
+  font-weight: 600;
+  b {
+    font-weight: 600;
+  }
+}
+figure{
+  margin: 0;
+  padding: 0;
+   }
+#cuerpo {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2.2vw, 3rem);
+}
+
+.minmax {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  // grid-template-columns: repeat(8, 1fr);
+  margin-bottom: 9rem;
+  @include cel {
+    margin-bottom: 0rem;
+  }
+}
+
+.conte {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+#nav{
+  position: absolute;
+  left: 0px;  
+  top:-2rem;
+  @include cel{
+    width: 100%;
+    left: 50%;  
+    transform: translateX(-50%);
+
+  }
+  
+  a{
+    color: $azulOscuro;
+    font-weight: 600;
+  }
+}
+#hero {
+  display: flex;
+  gap: 2em;
+  
+  .izq {
+    flex: 1 1 50%;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    .bandeja{
+      position: relative;
+      width: 60%;
+    .logo{
+      width: 40%;
+      height: auto;
+    }
+    h1{
+      padding: 1.5rem 0;
+    }
+    }
+  }
+  .der {
+    flex: 1 1 50%;
+    position: relative;
+    img{
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5em;
+      width: 100%;
+      bottom: -3%;
+      left: 0;
+      background-color: $azulOscuro;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      z-index: -1;
+    }
+  }
+  @include cel{
+    flex-wrap: wrap;
+    .izq{
+      flex: 1 1 100%;
+      order:2;
+      text-align: center;
+      .logo{
+
+        width: 100%!important;
+        img{
+        width: 60%;
+        height: auto;
+      }
+      }
+    }
+    .der{
+      order:1;
+      flex: 1 1 100%;
+      height: 60vh;
+      img{
+        height: 100%;
+      }
+
+    }
+  }
+}
+.escritorio{
+  @include cel{
+    display: none!important;
+    border: solid;
+  }
+}
+#contexto{
+  padding: 6rem 3.5rem;
+  @include cel{
+    padding: 10%;
+    text-align:  center;
+  }
+  padding: 6rem 3.5rem;
+  @include hd{
+    padding: 8rem 15%;
+  }
+  h2{
+    padding-bottom: 2rem;
+    @include cel{
+      font-size:1.2rem;
+    }
+  }
+}
+#contextoB{
+  transform: translateY(2rem);
+  -webkit-transform: translateY(2rem);
+  margin-top: 3em;
+  background: url('img/Fondo-arena.jpg') no-repeat;
+  background-position: top right;
+  background-size: contain;
+  @include hd{
+    background-size:60%;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  p{
+    font-size: clamp(0.9rem, 1.3vw, 1.7em);
+  }
+  .izq{
+    figure{
+      transform: translateY(-2rem);
+      -webkit-transform: translateY(-2rem);
+      img{
+        border-bottom-right-radius: 5rem;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        @include cel{
+          height: 55vh;
+        }
+      }
+    }
+    flex: 1 0 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      width: 70%;
+    }
+    
+  }
+  .der{
+    flex: 1 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      width: 70%;
+    }
+
+    figure{
+      img{
+        border-bottom-left-radius: 5rem;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        @include cel{
+          height: 55vh;
+        }
+      }
+    }
+  }
+}
+#amenidades{
+  background:url('img/fondo-azul.jpg') $azulOscuro no-repeat;
+  background-size: contain;
+  background-position: top center;
+  padding-top: 4rem;
+  p{
+    color: #fff;
+    padding:3rem 0 4rem;
+  }
+  img{
+    border-top-left-radius: 4rem;
+    margin-bottom: -6px;
+    @include cel{
+      height: 30vh;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  .bandeja{
+    background-color: $beige;
+    margin: 0;
+    padding: 25vh 0;
+    @include hd{
+      padding: 10vh 0;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul{
+      list-style: disc;
+      columns: 2;
+      width: 70%;
+      column-gap: 2rem;
+      li{
+        color: $azul;
+      }
+    }
+    @include cel{
+      padding: 8vh 1rem;
+      ul{
+        columns: 1;
+      }
+    }
+    
+  }
+  .conte{
+    width: 80%;
+    @include hd{
+      width: 50%;
+      
+    }
+    // margin:clamp(3rem, 1.5vw, 3.5rem);
+  }
+}
+
+#amenidades-2{
+  background-color: $azul;
+  
+  img{
+    border-bottom-right-radius: 4rem;
+    margin-bottom: -6px;
+    @include cel{
+      height: 30vh;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  .bandeja{
+    margin: 0;
+    padding: 15vh 0;
+    @include hd{
+      padding: 10vh 0;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul{
+      list-style: disc;
+      columns: 2;
+      width: 70%;
+      column-gap: 2rem;
+      li{
+        color: #fff;
+      }
+    }
+    
+    @include cel{
+      padding: 8vh 0;
+      ul{
+        columns: 1;
+      }
+    }
+    
+  }
+  .conte{
+    width: 80%;
+    @include hd{
+      width: 50%;
+
+    }
+    // margin:clamp(3rem, 1.5vw, 3.5rem);
+  }
+}
+#habitaciones{
+  .conte{
+    margin: 6rem 0 4rem;
+  }
+}
+#slider:hover{
+
+  &::-webkit-scrollbar-thumb{
+    visibility: visible;
+  }
+}
+
+#slider{
+  display: flex;
+  gap: 1rem;
+  padding-left: 5%;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-points-x:repeat(300px);
+  scroll-snap-type: mandatory;
+  &::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-thumb{
+   background: $azul;
+   border-radius: 10px;
+   visibility: hidden;
+  }
+  &::-webkit-scrollbar-track{
+    background: transparent;
+   }
+  
+
+  .habitacion{
+    flex:1 0 40%;
+    background-color: $beige;
+    padding: 1rem;
+    border-radius: 2rem;
+    position: relative;
+    img{
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      width: 100%;
+      height: auto;
+    }
+    h2{
+      display: block;
+      background-color: $azulOscuro;
+      color: #fff;
+      padding: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      margin-top: -5px;
+    }
+    p{
+      margin: 2.5rem 1rem;
+    }
+    a{
+      transform: translateX(50%);
+      -webkit-transform: translateX(50%);
+    }
+  }
+}
+#mapa {
+  height: 300px;
+  border: solid;
+}

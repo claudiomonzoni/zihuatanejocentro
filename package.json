@@ -1,0 +1,26 @@
+{
+  "name": "arranque",
+  "version": "1.0.0",
+  "description": "Arranque de sitios",
+  "main": "index.html",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "prod": "parcel build index.html --public-url ./ "
+  },
+  "author": "Claudio Monzoni",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.35.2",
+    "simple-icons": "^4.25.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "gsap": "^3.7.1",
+    "leaflet": "^1.7.1",
+    "mm": "^3.2.0",
+    "modulo": "0.0.3",
+    "wow": "0.0.6",
+    "wowjs": "^1.1.3"
+  }
+}
