@@ -257,7 +257,7 @@ h1 {
       width: 70%;
       column-gap: 2rem;
       li{
-        color: $azul;
+        color: $azulOscuro;
       }
     }
     @include cel{
@@ -342,8 +342,14 @@ h1 {
   display: flex;
   gap: 1rem;
   padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2rem;
+  @include hd{
+    padding-bottom: 5%;
+  }
   width: 100%;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-behavior:smooth;
   -webkit-overflow-scrolling:touch;
   scroll-snap-points-x:repeat(300px);
@@ -355,6 +361,7 @@ h1 {
   &::-webkit-scrollbar-thumb{
    background: $azul;
    border-radius: 10px;
+   width: 100px;
    visibility: hidden;
   }
   &::-webkit-scrollbar-track{
@@ -364,6 +371,12 @@ h1 {
 
   .habitacion{
     flex:1 0 40%;
+    @include hd{
+      flex:1 0 30%;
+    }
+    @include cel{
+      flex:1 0 90%;
+    }
     background-color: $beige;
     padding: 1rem;
     border-radius: 2rem;
@@ -382,13 +395,20 @@ h1 {
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
       margin-top: -5px;
+      font-size: clamp(1.2rem, 1.8vw,  2rem);
     }
     p{
       margin: 2.5rem 1rem;
     }
     a{
-      transform: translateX(50%);
-      -webkit-transform: translateX(50%);
+      position: absolute;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      @include cel{
+        bottom: -7%;
+      }
     }
   }
 }

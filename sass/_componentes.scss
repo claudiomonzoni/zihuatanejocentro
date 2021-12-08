@@ -57,6 +57,14 @@ nav {
   margin: 2em 0;
   border-radius: 100px;
   transition: ease 0.2s;
+  @include cel{
+    display: block;
+    width: 70%;
+    text-align: center;
+    font-size: clamp(1rem, 1.2vw, 1rem);
+    padding: .7rem 0.8rem;
+    margin: 1.5em 0;
+  }
   &:hover{
     background-color: $azulOscuro;
     color: $naranja;
