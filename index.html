@@ -31,6 +31,9 @@
     ></script>
   </head>
   <body>
+    <div id="reservaFixed">
+      <a href="#habitaciones" class="btn"> <b>Reserva</b> tu habitación</a>
+    </div>
     <div id="cuerpo">
       <div id="cargando"></div>
       <section id="hero">
@@ -46,7 +49,7 @@
               />
             </div>
             <h1><b>El hotel mejor ubicado en el centro de Zihuatanejo</b></h1>
-            <a href="#"  class="btn escritorio">Reservar habitación</a>
+            <a href="#habitaciones"  class="btn escritorio">Reservar habitación</a>
           </div>
         </div>
         <div class="der">
@@ -168,6 +171,42 @@
       </section>
 
       <section id="habitaciones">
+        <div id="sistema">
+          <div id="encabezadoSistema">
+            <a href="#"> <img src="img/atras.svg" alt="atras"> </a>
+            <h2>Penthouse o Suite Lunamielera</h2>
+          </div>
+          <figure>
+            <img src="img/hotel-zihuatanejo-centro-penthouse-suite.jpg" alt="Penthouse">
+          </figure>
+          <div id="datos">
+            <label for="adultos">
+              <img src="img/adultos.svg" alt="numero de adultos"> Numero de adultos:
+            </label>
+            <input type="number" name="adultos" id="adultos">
+            <br>
+            <label for="ninos">
+              <img src="img/ninos.svg" alt="numero de ninos"> Numero de niños <span>(menores de 12 años)</span>:
+            </label>
+            <input type="number" name="ninos" id="ninos">
+            <br>
+            <label for="llegada">
+              <img src="img/llegada.svg" alt="fecga de llegada"> Fecha de llegada:
+            </label>
+            <input type="date" name="llegada" id="llegada">
+            <br>
+            <label for="salida">
+              <img src="img/salida.svg" alt="fecha de salida"> Fecha de salida:
+            </label>
+            <input type="date" name="salida" id="salida">
+            <br>
+            
+            <a href="#" class="btn"> Cotizar reservación</a>
+          </div>
+         <p>
+          Al dar click en el botón de "Cotizar reservación" te conectaremos vía whatsapp al servicio de reservas del Hotel Zihuatanejo Centro y cotizaremos tu estancia.
+         </p>
+        </div>
         <div class="conte">
           <h2>Habitaciones Hotel Zihuatanejo centro</h2>
         </div>
