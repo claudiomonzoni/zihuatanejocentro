@@ -548,12 +548,21 @@ h1 {
   }
 }
 #sistema{
-  position: absolute;
+  display: block;
+  position: fixed;
   top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  overflow:scroll;
   z-index: 99999;
-  width: 100%;
-  min-height: 100vh;
+  width: 40%;
+  height: 100vh;
   background-color: #fff;
+  @include cel{
+    width: 100%;
+    min-height: 100vh;
+  }
   figure{
     img{
       width: 100%;
@@ -596,19 +605,21 @@ h1 {
   -webkit-transform: translateY(-10vh);
   a{
     position: absolute;
-    bottom: -50px;
+    bottom: -70px;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
+    width: 70%;
+    text-align: center;
   }
 }
 input{
   width: 100%;
   border: none;
   padding: 0.4rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: $azulOscuro;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem;
 }
 label{
   font-weight: bold;
