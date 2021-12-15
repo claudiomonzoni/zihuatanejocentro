@@ -120,9 +120,9 @@ const actualizar = (e) => {
   //comprobar si es cel o pc
   let whats =""
   if(/Mobile/i.test(ua)){
-    whats = "https://wa.me/";
+    whats = "https://api.whatsapp.com/send/?phone=5217551019549&text=";
   } else{
-     whats = "https://web.whatsapp.com/send/?phone=";
+     whats = "https://web.whatsapp.com/send/?phone=5217551019549&text=";
   }
   //obtener datos de inputs y formar el mensaje
   const mensaje = `
@@ -142,8 +142,10 @@ envio(h2, whats)
 
 const envio = (h2, whats) => {
 
+  // https://web.whatsapp.com/send/?phone=5217551019549&text=Hola%2C+me+contacto+desde+zihuacentro.com%2C+deseo+cotizar%3A%0ANombre%3A+claudio%0AHabitacion%3A+Habitaci%C3%B3n+Premium%2C%0ANo.+de+adultos%3A+2%2C%0ANo.+de+ni%C3%B1os%3A+2%0AFecha+de+Llagada%3A+2021-12-16%0AFecha+de+Salida%3A+2021-12-17
+
   const url = `
-  ${whats}5217551019549?text=Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llegada.value}%0aFecha%20de%20Salida:%20${salida.value}
+  ${whats}Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llegada.value}%0aFecha%20de%20Salida:%20${salida.value}
   `;
   btncotizar.href = url;
 
