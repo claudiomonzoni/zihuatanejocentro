@@ -5,16 +5,16 @@ window.onload = function () {
   cargando.classList.add("eliminado");
 };
 
-//only phones
-const x = window.matchMedia("(max-width: 479px)");
-esCell(x); // Call listener function at run time
-x.addListener(esCell); // Attach listener function on state changes
+// //only phones
+// const x = window.matchMedia("(max-width: 479px)");
+// esCell(x); // Call listener function at run time
+// x.addListener(esCell); // Attach listener function on state changes
 
-// nav
+// // nav
 
-function esCell(x) {
-  console.log(x);
-}
+// function esCell(x) {
+//   console.log(x);
+// }
 
 // importo gsap
 // // llamo gspa
@@ -53,6 +53,9 @@ if (divmapa) {
   });
 }
 
+
+
+
 //logica de reservaciones
 const btn = document.querySelectorAll(".habitacion a");
 const oscuro = document.getElementById("oscuro");
@@ -68,6 +71,9 @@ const llegada = document.getElementById("llegada");
 const salida = document.getElementById("salida");
 const btncotizar = document.getElementById("cotizar");
 const revisar = document.getElementById("revisar");
+
+//user agent
+const ua = navigator.userAgent;
 
 //asigno Listener a cada botón
 btn.forEach((boton) => {
@@ -107,12 +113,17 @@ const actualizar = (e) => {
     console.log("vacio")
   }else{
     btncotizar.classList.remove('desactivado')
-    console.log("activate")
+
   }
 
   const h2 = h2sistema.textContent;
   //comprobar si es cel o pc
-  const whats = "https://wa.me/";
+  let whats =""
+  if(/Mobile/i.test(ua)){
+    whats = "https://wa.me/";
+  } else{
+     whats = "https://web.whatsapp.com/send/?phone=";
+  }
   //obtener datos de inputs y formar el mensaje
   const mensaje = `
   <hr>
@@ -143,7 +154,7 @@ nombre.addEventListener("focusout", actualizar);
 adultos.addEventListener("focusout", actualizar);
 ninos.addEventListener("focusout", actualizar);
 llegada.addEventListener("focusout", actualizar);
-salida.addEventListener("focusout", actualizar);
+salida.addEventListener("focusin", actualizar);
 
 // cerramos ventana
 atras.addEventListener("click", (e) => {
