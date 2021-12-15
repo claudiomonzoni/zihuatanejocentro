@@ -36,16 +36,26 @@
     <div id="reservaFixed">
       <a href="#habitaciones" class="btn"> <b>Reserva</b> tu habitación</a>
     </div>
-
+<div id="oscuro" class="escondete">
     <div id="sistema">
       <div id="encabezadoSistema">
-        <a href="#"> <img src="img/atras.svg" alt="atras"> </a>
+        <a href="#" id="atras"> <img src="img/atras.svg" alt="atras"> </a>
         <h2>Penthouse o Suite Lunamielera</h2>
       </div>
       <figure>
         <img src="img/hotel-zihuatanejo-centro-penthouse-suite.jpg" alt="Penthouse">
       </figure>
       <div id="datos">
+        <div class="anuncio">
+          *Por favor llena todos los campos para activar el boton de reservación.
+        </div>
+        <hr>
+       <label for="Nombre">
+          <img src="img/adultos.svg" alt="numero de adultos"> Nombre:
+        </label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+
         <label for="adultos">
           <img src="img/adultos.svg" alt="numero de adultos"> Numero de adultos:
         </label>
@@ -66,16 +76,18 @@
         </label>
         <input type="date" name="salida" id="salida">
         <br>
-        
-        <a href="#" class="btn"> Cotizar reservación</a>
+        <div id="revisar">
+
+        </div>
+        <a href="#" class="btn desactivado" id="cotizar"> Cotizar reservación</a>
       </div>
      <p>
       Al dar click en el botón de "Cotizar reservación" te conectaremos vía whatsapp al servicio de reservas del Hotel Zihuatanejo Centro y cotizaremos tu estancia.
      </p>
     </div>
+  </div>
 
 
-    
     <div id="cuerpo">
       <div id="cargando"></div>
       <section id="hero">

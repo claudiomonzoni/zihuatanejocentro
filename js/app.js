@@ -1,4 +1,3 @@
-
 import gsap from "gsap";
 
 const cargando = document.getElementById("cargando");
@@ -6,28 +5,16 @@ window.onload = function () {
   cargando.classList.add("eliminado");
 };
 
-
 //only phones
-var x = window.matchMedia("(max-width: 479px)");
+const x = window.matchMedia("(max-width: 479px)");
 esCell(x); // Call listener function at run time
 x.addListener(esCell); // Attach listener function on state changes
 
 // nav
 
 function esCell(x) {
-console.log("Soy celular")
+  console.log(x);
 }
-
-// agregar el shift al scroll
-
-// const habitacion= document.querySelector('#habitaciones')
-// habitacion.addEventListener('mouseover', (e) => {
-//   console.log("que")
-//   // new KeyboardEvent('keydown', {'key':'Shift'} )
-// } )
-// let scrollVertical = new Event('click')
-// habitacion.dispatchEvent(scrollVertical)
-
 
 // importo gsap
 // // llamo gspa
@@ -50,7 +37,6 @@ gsap.from(".punto", {
   duration: 0.6, //1 segundo
 });
 
-
 const WOW = require("wowjs");
 
 window.wow = new WOW.WOW({
@@ -66,3 +52,102 @@ if (divmapa) {
     mapa.obtenerDatos();
   });
 }
+
+//logica de reservaciones
+const btn = document.querySelectorAll(".habitacion a");
+const oscuro = document.getElementById("oscuro");
+const atras = document.getElementById("atras");
+//sistema
+const h2sistema = document.querySelector("#encabezadoSistema h2");
+const imgsistema = document.querySelector("#sistema figure img");
+//inputs
+const nombre = document.getElementById("nombre");
+const adultos = document.getElementById("adultos");
+const ninos = document.getElementById("ninos");
+const llegada = document.getElementById("llegada");
+const salida = document.getElementById("salida");
+const btncotizar = document.getElementById("cotizar");
+const revisar = document.getElementById("revisar");
+
+//asigno Listener a cada botón
+btn.forEach((boton) => {
+  boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    datosTraver(e);
+    //muestro ventana
+    oscuro.classList.toggle("escondete");
+    oscuro.classList.toggle("revelate");
+  });
+});
+
+//obtengo datos con traversing
+const datosTraver = (elemento) => {
+  const padre = elemento.target.parentElement;
+  const h2 = padre.querySelector("h2").textContent;
+  const src = padre.querySelector("img").getAttribute("src");
+  const imagen = padre.querySelector("img");
+  //cambio en sistema la imagen y el h2
+  h2sistema.innerText = h2;
+  imgsistema.src = src;
+};
+
+//obtengo los datos de los inputs
+
+//si es cel app si es pc web.app
+const actualizar = (e) => {
+  e.preventDefault();
+
+  if (
+    adultos.value === "" ||
+    ninos.value === "" ||
+    llegada.value === "" ||
+    salida.value === "" ||
+    nombre.value === ""
+  ) {
+    console.log("vacio")
+  }else{
+    btncotizar.classList.remove('desactivado')
+    console.log("activate")
+  }
+
+  const h2 = h2sistema.textContent;
+  //comprobar si es cel o pc
+  const whats = "https://wa.me/";
+  //obtener datos de inputs y formar el mensaje
+  const mensaje = `
+  <hr>
+  <b>Por favor revise sus datos</b>
+  <hr>
+Nombre: <b> ${nombre.value} </b> <br>
+Numero de adultos: <b> ${adultos.value} </b> <br>
+Numero de niños: <b> ${ninos.value} </b> <br>
+Fecha de llegada: <b> ${llegada.value} </b> <br>
+Fecha de salida: <b> ${salida.value} </b>
+Numero de noches:
+`;
+revisar.innerHTML=mensaje
+envio(h2, whats)
+};
+
+const envio = (h2, whats) => {
+
+  const url = `
+  ${whats}5217551019549?text=Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llegada.value}%0aFecha%20de%20Salida:%20${salida.value}
+  `;
+  btncotizar.href = url;
+
+};
+
+
+nombre.addEventListener("focusout", actualizar);
+adultos.addEventListener("focusout", actualizar);
+ninos.addEventListener("focusout", actualizar);
+llegada.addEventListener("focusout", actualizar);
+salida.addEventListener("focusout", actualizar);
+
+// cerramos ventana
+atras.addEventListener("click", (e) => {
+  e.preventDefault();
+  oscuro.classList.toggle("escondete");
+  oscuro.classList.toggle("revelate");
+});

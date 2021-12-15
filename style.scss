@@ -547,15 +547,28 @@ h1 {
     }
   }
 }
-#sistema{
-  display: block;
+#oscuro{
+  background: rgba(26, 50, 96, .9);
+  width: 100%;
+  height: 100vw;
   position: fixed;
   top: 0%;
+  left: 0%;
+  z-index: 99999;
+}
+.revelate{
+  display: block;
+}
+.escondete{
+  display: none;
+}
+
+#sistema{
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   overflow:scroll;
-  z-index: 99999;
   width: 40%;
   height: 100vh;
   background-color: #fff;
@@ -629,4 +642,12 @@ label{
     font-size: 0.8em;
     font-weight: normal;
   }
+}
+.desactivado{
+  opacity: 0.2;
+  pointer-events: none;
+}
+.activate{
+  opacity: 1;
+  pointer-events:auto;
 }

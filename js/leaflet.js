@@ -11,7 +11,7 @@ export class Mapa {
     const map = L.map('mapa',{
       scrollWheelZoom:false,
       zoomOffset: -1
-    }).setView([20.694448, -103.375751], 16)
+    }).setView([17.639544, -101.557177], 16)
     const enlaceMapa = '<a href="http://openstreetmap.org">OpenStreetMap</a>'
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; ' + enlaceMapa + ' Contributors',
@@ -25,8 +25,8 @@ export class Mapa {
     const pines = {
       resultados: [
         {
-          latitude: '20.694448',
-          longitude: '-103.375751',
+          latitude: '17.639544',
+          longitude: '-101.557177',
           titulo: 'Icza',
           calle: 'Avenida Adolfo Lopez Mateos Norte 95 Italia Providencia, Guadalajara, Jalisco 44648',
         },
