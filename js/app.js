@@ -1,4 +1,6 @@
 import gsap from "gsap";
+import moment from "moment";
+import 'moment/locale/es';
 
 const cargando = document.getElementById("cargando");
 window.onload = function () {
@@ -124,6 +126,14 @@ const actualizar = (e) => {
   } else{
      whats = "https://web.whatsapp.com/send/?phone=5217551019549&text=";
   }
+  //obtener las noches
+
+  moment.locale('es');   
+  const llega = moment(llegada.value).format('dddd D MMMM YYYY')
+  const sale = moment(salida.value).format('dddd D MMMM YYYY')
+  const llegaObj = moment(llegada.value)
+  const saleObj = moment(salida.value)
+  const noches = llegaObj.diff(saleObj, 'days')
   //obtener datos de inputs y formar el mensaje
   const mensaje = `
   <hr>
@@ -132,20 +142,20 @@ const actualizar = (e) => {
 Nombre: <b> ${nombre.value} </b> <br>
 Numero de adultos: <b> ${adultos.value} </b> <br>
 Numero de niños: <b> ${ninos.value} </b> <br>
-Fecha de llegada: <b> ${llegada.value} </b> <br>
-Fecha de salida: <b> ${salida.value} </b>
-Numero de noches:
+Fecha de llegada: <b> ${llega} </b> <br>
+Fecha de salida: <b> ${sale} </b>
+Numero de noches: <b> ${noches}</b>
 `;
 revisar.innerHTML=mensaje
-envio(h2, whats)
+envio(h2, whats, llega, sale)
 };
 
-const envio = (h2, whats) => {
+const envio = (h2, whats, llega, sale) => {
 
   // https://web.whatsapp.com/send/?phone=5217551019549&text=Hola%2C+me+contacto+desde+zihuacentro.com%2C+deseo+cotizar%3A%0ANombre%3A+claudio%0AHabitacion%3A+Habitaci%C3%B3n+Premium%2C%0ANo.+de+adultos%3A+2%2C%0ANo.+de+ni%C3%B1os%3A+2%0AFecha+de+Llagada%3A+2021-12-16%0AFecha+de+Salida%3A+2021-12-17
 
   const url = `
-  ${whats}Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llegada.value}%0aFecha%20de%20Salida:%20${salida.value}
+  ${whats}Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llega}%0aFecha%20de%20Salida:%20${sale}
   `;
   btncotizar.href = url;
 
