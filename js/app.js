@@ -133,7 +133,7 @@ const actualizar = (e) => {
   const sale = moment(salida.value).format('dddd D MMMM YYYY')
   const llegaObj = moment(llegada.value)
   const saleObj = moment(salida.value)
-  const noches = llegaObj.diff(saleObj, 'days')
+  const noches = saleObj.diff(llegaObj, 'days')
   //obtener datos de inputs y formar el mensaje
   const mensaje = `
   <hr>
@@ -143,7 +143,7 @@ Nombre: <b> ${nombre.value} </b> <br>
 Numero de adultos: <b> ${adultos.value} </b> <br>
 Numero de niños: <b> ${ninos.value} </b> <br>
 Fecha de llegada: <b> ${llega} </b> <br>
-Fecha de salida: <b> ${sale} </b>
+Fecha de salida: <b> ${sale} </b> <br>
 Numero de noches: <b> ${noches}</b>
 `;
 revisar.innerHTML=mensaje
