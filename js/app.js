@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import moment from "moment";
-import 'moment/locale/es';
+import "moment/locale/es";
 
 const cargando = document.getElementById("cargando");
 window.onload = function () {
@@ -54,9 +54,6 @@ if (divmapa) {
     mapa.obtenerDatos();
   });
 }
-
-
-
 
 //logica de reservaciones
 const btn = document.querySelectorAll(".habitacion a");
@@ -112,28 +109,27 @@ const actualizar = (e) => {
     salida.value === "" ||
     nombre.value === ""
   ) {
-    console.log("vacio")
-  }else{
-    btncotizar.classList.remove('desactivado')
-
+    console.log("vacio");
+  } else {
+    btncotizar.classList.remove("desactivado");
   }
 
   const h2 = h2sistema.textContent;
   //comprobar si es cel o pc
-  let whats =""
-  if(/Mobile/i.test(ua)){
+  let whats = "";
+  if (/Mobile/i.test(ua)) {
     whats = "https://api.whatsapp.com/send/?phone=5217551019549&text=";
-  } else{
-     whats = "https://web.whatsapp.com/send/?phone=5217551019549&text=";
+  } else {
+    whats = "https://web.whatsapp.com/send/?phone=5217551019549&text=";
   }
   //obtener las noches
 
-  moment.locale('es');   
-  const llega = moment(llegada.value).format('dddd D MMMM YYYY')
-  const sale = moment(salida.value).format('dddd D MMMM YYYY')
-  const llegaObj = moment(llegada.value)
-  const saleObj = moment(salida.value)
-  const noches = saleObj.diff(llegaObj, 'days')
+  moment.locale("es");
+  const llega = moment(llegada.value).format("dddd D MMMM YYYY");
+  const sale = moment(salida.value).format("dddd D MMMM YYYY");
+  const llegaObj = moment(llegada.value);
+  const saleObj = moment(salida.value);
+  const noches = saleObj.diff(llegaObj, "days");
   //obtener datos de inputs y formar el mensaje
   const mensaje = `
   <hr>
@@ -146,21 +142,18 @@ Fecha de llegada: <b> ${llega} </b> <br>
 Fecha de salida: <b> ${sale} </b> <br>
 Numero de noches: <b> ${noches}</b>
 `;
-revisar.innerHTML=mensaje
-envio(h2, whats, llega, sale)
+  revisar.innerHTML = mensaje;
+  envio(h2, whats, llega, sale);
 };
 
 const envio = (h2, whats, llega, sale) => {
-
   // https://web.whatsapp.com/send/?phone=5217551019549&text=Hola%2C+me+contacto+desde+zihuacentro.com%2C+deseo+cotizar%3A%0ANombre%3A+claudio%0AHabitacion%3A+Habitaci%C3%B3n+Premium%2C%0ANo.+de+adultos%3A+2%2C%0ANo.+de+ni%C3%B1os%3A+2%0AFecha+de+Llagada%3A+2021-12-16%0AFecha+de+Salida%3A+2021-12-17
 
   const url = `
   ${whats}Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value}%0aHabitacion:%20${h2},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llega}%0aFecha%20de%20Salida:%20${sale}
   `;
   btncotizar.href = url;
-
 };
-
 
 nombre.addEventListener("focusout", actualizar);
 adultos.addEventListener("focusout", actualizar);

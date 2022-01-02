@@ -25,10 +25,10 @@ h4 {
     font-weight: 600;
   }
 }
-figure{
+figure {
   margin: 0;
   padding: 0;
-   }
+}
 #cuerpo {
   overflow: hidden;
 }
@@ -52,18 +52,17 @@ h1 {
   margin: 0 auto;
   padding: 0 5vw;
 }
-#nav{
+#nav {
   position: absolute;
-  left: 0px;  
-  top:-2rem;
-  @include cel{
+  left: 0px;
+  top: -2rem;
+  @include cel {
     width: 100%;
-    left: 50%;  
+    left: 50%;
     transform: translateX(-50%);
-
   }
-  
-  a{
+
+  a {
     color: $azulOscuro;
     font-weight: 600;
   }
@@ -71,29 +70,29 @@ h1 {
 #hero {
   display: flex;
   gap: 2em;
-  
+
   .izq {
     flex: 1 1 50%;
     display: inherit;
     justify-content: center;
     align-items: center;
     padding-top: 3rem;
-    .bandeja{
+    .bandeja {
       position: relative;
       width: 60%;
-    .logo{
-      width: 40%;
-      height: auto;
-    }
-    h1{
-      padding: 1.5rem 0;
-    }
+      .logo {
+        width: 40%;
+        height: auto;
+      }
+      h1 {
+        padding: 1.5rem 0;
+      }
     }
   }
   .der {
     flex: 1 1 50%;
     position: relative;
-    img{
+    img {
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       width: 100%;
@@ -113,35 +112,33 @@ h1 {
       z-index: -1;
     }
   }
-  @include cel{
+  @include cel {
     flex-wrap: wrap;
-    .izq{
+    .izq {
       flex: 1 1 100%;
-      order:2;
+      order: 2;
       text-align: center;
-      .logo{
-
-        width: 100%!important;
-        img{
-        width: 60%;
-        height: auto;
-      }
+      .logo {
+        width: 100% !important;
+        img {
+          width: 60%;
+          height: auto;
+        }
       }
     }
-    .der{
-      order:1;
+    .der {
+      order: 1;
       flex: 1 1 100%;
       height: 60vh;
-      img{
+      img {
         height: 100%;
       }
-
     }
   }
 }
-#reservaFixed{
+#reservaFixed {
   display: none;
-  @include cel{
+  @include cel {
     display: block;
   }
   position: fixed;
@@ -149,64 +146,64 @@ h1 {
   left: 0%;
   width: 100%;
   z-index: 900;
-  background-color: #B8D7E1;
+  background-color: #b8d7e1;
   height: 50px;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
-  a{
+  a {
     position: relative;
     left: 50%;
     transform: translate(-50%, -50px);
   }
 }
-.escritorio{
-  @include cel{
-    display: none!important;
+.escritorio {
+  @include cel {
+    display: none !important;
     border: solid;
   }
 }
-#contexto{
+#contexto {
   padding: 6rem 3.5rem;
-  @include cel{
+  @include cel {
     padding: 10%;
-    text-align:  center;
+    text-align: center;
   }
   padding: 6rem 3.5rem;
-  @include hd{
+  @include hd {
     padding: 8rem 15%;
   }
-  h2{
+  h2 {
     padding-bottom: 2rem;
-    @include cel{
-      font-size:1.2rem;
+    @include cel {
+      font-size: 1.2rem;
     }
   }
 }
-#contextoB{
+#contextoB {
   transform: translateY(2rem);
   -webkit-transform: translateY(2rem);
   margin-top: 3em;
-  background: url('img/Fondo-arena.jpg') no-repeat;
+  background: url("img/Fondo-arena.jpg") no-repeat;
   background-position: top right;
   background-size: contain;
-  @include hd{
-    background-size:60%;
+  @include hd {
+    background-size: 60%;
   }
   display: flex;
   flex-wrap: wrap;
-  p{
+  p {
     font-size: clamp(0.9rem, 1.3vw, 1.7em);
   }
-  .izq{
-    figure{
+  .izq {
+    figure {
       transform: translateY(-2rem);
       -webkit-transform: translateY(-2rem);
-      img{
+      img {
         border-bottom-right-radius: 5rem;
         width: 100%;
         height: auto;
         object-fit: cover;
-        @include cel{
+        @include cel {
           height: 55vh;
         }
       }
@@ -216,199 +213,192 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    p{
+    p {
       width: 70%;
     }
-    
   }
-  .der{
+  .der {
     flex: 1 0 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    p{
+    p {
       width: 70%;
     }
 
-    figure{
-      img{
+    figure {
+      img {
         border-bottom-left-radius: 5rem;
         width: 100%;
         height: auto;
         object-fit: cover;
-        @include cel{
+        @include cel {
           height: 55vh;
         }
       }
     }
   }
 }
-#amenidades{
-  background:url('img/fondo-azul.jpg') $azulOscuro no-repeat;
+#amenidades {
+  background: url("img/fondo-azul.jpg") $azulOscuro no-repeat;
   background-size: contain;
   background-position: top center;
   padding-top: 4rem;
-  p{
+  p {
     color: #fff;
-    padding:3rem 0 4rem;
+    padding: 3rem 0 4rem;
   }
-  img{
+  img {
     border-top-left-radius: 4rem;
     margin-bottom: -6px;
-    @include cel{
+    @include cel {
       height: 30vh;
       width: auto;
       object-fit: cover;
     }
   }
-  .bandeja{
+  .bandeja {
     background-color: $beige;
     margin: 0;
     padding: 25vh 0;
-    @include hd{
+    @include hd {
       padding: 10vh 0;
     }
     display: flex;
     justify-content: center;
     align-items: center;
-    ul{
+    ul {
       list-style: disc;
       columns: 2;
       width: 70%;
       column-gap: 2rem;
-      li{
+      li {
         color: $azulOscuro;
       }
     }
-    @include cel{
+    @include cel {
       padding: 8vh 1rem;
-      ul{
+      ul {
         columns: 1;
       }
     }
-    
   }
-  .conte{
+  .conte {
     width: 80%;
-    @include hd{
+    @include hd {
       width: 50%;
-      
     }
     // margin:clamp(3rem, 1.5vw, 3.5rem);
   }
 }
 
-#amenidades-2{
+#amenidades-2 {
   background-color: $azul;
-  
-  img{
+
+  img {
     border-bottom-right-radius: 4rem;
     margin-bottom: -6px;
-    @include cel{
+    @include cel {
       height: 30vh;
       width: auto;
       object-fit: cover;
     }
   }
-  .bandeja{
+  .bandeja {
     margin: 0;
     padding: 15vh 0;
-    @include hd{
+    @include hd {
       padding: 10vh 0;
     }
     display: flex;
     justify-content: center;
     align-items: center;
-    ul{
+    ul {
       list-style: disc;
       columns: 2;
       width: 70%;
       column-gap: 2rem;
-      li{
+      li {
         color: #fff;
       }
     }
-    
-    @include cel{
+
+    @include cel {
       padding: 8vh 0;
-      ul{
+      ul {
         columns: 1;
       }
     }
-    
   }
-  .conte{
+  .conte {
     width: 80%;
-    @include hd{
+    @include hd {
       width: 50%;
-
     }
     // margin:clamp(3rem, 1.5vw, 3.5rem);
   }
 }
-#habitaciones{
+#habitaciones {
   position: relative;
-  .conte{
+  .conte {
     margin: 6rem 0 4rem;
   }
 }
-#slider:hover{
-
-  &::-webkit-scrollbar-thumb{
+#slider:hover {
+  &::-webkit-scrollbar-thumb {
     visibility: visible;
   }
 }
 
-#slider{
+#slider {
   display: flex;
   gap: 1rem;
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5em;
-  @include hd{
+  @include hd {
     padding-bottom: 5%;
   }
   width: 100%;
   overflow-x: auto;
   overflow-y: visible;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-  scroll-snap-points-x:repeat(400px);
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-points-x: repeat(400px);
   scroll-snap-type: mandatory;
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 10px;
     height: 15px;
   }
-  &::-webkit-scrollbar-thumb{
-   background: $azul;
-   border-radius: 10px;
-   width: 50px;
-   visibility: hidden;
+  &::-webkit-scrollbar-thumb {
+    background: $azul;
+    border-radius: 10px;
+    width: 50px;
+    visibility: hidden;
   }
-  &::-webkit-scrollbar-track{
+  &::-webkit-scrollbar-track {
     background: transparent;
-   }
-  
+  }
 
-  .habitacion{
-    flex:1 0 30%;
-    @include hd{
-      flex:1 0 25%;
+  .habitacion {
+    flex: 1 0 30%;
+    @include hd {
+      flex: 1 0 25%;
     }
-    @include cel{
-      flex:1 0 90%;
+    @include cel {
+      flex: 1 0 90%;
     }
     background-color: $beige;
     padding: 1rem;
     border-radius: 2rem;
     position: relative;
-    img{
+    img {
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
       width: 100%;
       height: auto;
     }
-    h2{
+    h2 {
       display: block;
       background-color: $azulOscuro;
       color: #fff;
@@ -416,24 +406,24 @@ h1 {
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
       margin-top: -5px;
-      font-size: clamp(1.2rem, 1.8vw,  2rem);
+      font-size: clamp(1.2rem, 1.8vw, 2rem);
     }
-    p{
+    p {
       margin: 2.5rem 1rem;
     }
-    a{
+    a {
       position: absolute;
       bottom: -10%;
       left: 50%;
       transform: translateX(-50%);
       -webkit-transform: translateX(-50%);
-      @include cel{
+      @include cel {
         bottom: -7%;
       }
     }
   }
 }
-#todas{
+#todas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -441,24 +431,24 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  h2{
+  h2 {
     flex: 1 0 100%;
     padding-bottom: 2rem;
   }
-  ul{
+  ul {
     list-style: disc;
     columns: 2;
     width: 70%;
     column-gap: 2rem;
-    @include cel{
+    @include cel {
       columns: 1;
     }
-    li{
+    li {
       color: $azulOscuro;
     }
   }
 }
-#elh2{
+#elh2 {
   background-color: $azulOscuro;
   color: #fff;
   padding: 3rem 3rem 5rem;
@@ -469,16 +459,16 @@ h1 {
   border-top-right-radius: 2rem;
   margin-top: -2rem;
 }
-.iconoscontacto{
+.iconoscontacto {
   position: relative;
   margin-top: -2rem;
   z-index: 400;
   border-top-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
-  background:url('img/fondo-azul.jpg') no-repeat $azulOscuro;
+  background: url("img/fondo-azul.jpg") no-repeat $azulOscuro;
   color: #fff;
   display: flex;
-  @include cel{
+  @include cel {
     flex-wrap: wrap;
     height: auto;
     padding: 3rem 0;
@@ -487,68 +477,68 @@ h1 {
   align-items: center;
   height: 30vh;
   padding: 0 4rem;
-  a{
+  a {
     color: #fff;
   }
-  li{
+  li {
     list-style: none;
   }
-  .item{
+  .item {
     text-align: center;
     flex: 1 0 33%;
-    img{
+    img {
       width: 2.7rem;
       padding-bottom: 1rem;
     }
-    @include cel{
-      padding:1.5rem 3rem;
-      img{
+    @include cel {
+      padding: 1.5rem 3rem;
+      img {
         width: 2.4rem;
         padding-bottom: 1rem;
       }
     }
-    li{
+    li {
       display: inline-block;
       padding: 0.5rem 0.5rem 0;
     }
   }
 }
 
-#footer{
+#footer {
   margin-top: -3rem;
   // background: url('img/Fondo-arena.jpg') no-repeat $beige;
   background: $beige;
   background-position: top right;
   background-size: contain;
-  background-blend-mode:multiply;
-  .contePie{
+  background-blend-mode: multiply;
+  .contePie {
     padding: 8rem 5rem 5rem;
     text-align: center;
-    figure{
-      img{
+    figure {
+      img {
         width: 10%;
         height: auto;
-        @include cel{
+        @include cel {
           width: 70%;
         }
       }
     }
   }
-  ul{
-    li{
+  ul {
+    li {
       display: inline-block;
       padding: 2rem;
     }
-    @include cel{
+    @include cel {
       padding-bottom: 2rem;
-    li{
-      padding: .6rem;
-    }
+      li {
+        padding: 0.6rem;
+      }
     }
   }
 }
-#oscuro{
-  background: rgba(26, 50, 96, .9);
+#oscuro {
+  background: rgba(26, 50, 96, 0.9);
   width: 100%;
   height: 100vw;
   position: fixed;
@@ -556,28 +546,28 @@ h1 {
   left: 0%;
   z-index: 99999;
 }
-.revelate{
+.revelate {
   display: block;
 }
-.escondete{
+.escondete {
   display: none;
 }
 
-#sistema{
+#sistema {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  overflow:scroll;
+  overflow: scroll;
   width: 40%;
   height: 100vh;
   background-color: #fff;
-  @include cel{
+  @include cel {
     width: 100%;
     min-height: 100vh;
   }
-  figure{
-    img{
+  figure {
+    img {
       width: 100%;
       height: 40vh;
       object-fit: cover;
@@ -587,14 +577,14 @@ h1 {
       -webkit-transform: translateY(-20px);
     }
   }
-  p{
+  p {
     font-size: 0.8em;
     color: $azulOscuro;
     padding: 2rem;
     text-align: center;
   }
 }
-#encabezadoSistema{
+#encabezadoSistema {
   position: relative;
   background-color: $azulOscuro;
   color: #fff;
@@ -602,12 +592,12 @@ h1 {
   padding: 1.2rem;
   border-bottom-right-radius: 2rem;
   z-index: 500;
-  h2{
+  h2 {
     padding-left: 1rem;
     font-size: 1.2rem;
   }
 }
-#datos{
+#datos {
   position: relative;
   background-color: $beige;
   border-radius: 2rem;
@@ -616,7 +606,7 @@ h1 {
   margin: 0 auto;
   transform: translateY(-10vh);
   -webkit-transform: translateY(-10vh);
-  a{
+  a {
     position: absolute;
     bottom: -70px;
     left: 50%;
@@ -626,28 +616,35 @@ h1 {
     text-align: center;
   }
 }
-input{
+input {
   width: 100%;
   border: none;
   padding: 0.4rem;
   font-size: 1rem;
   color: $azulOscuro;
   margin: 0.5rem 0 1rem;
+  background-color: #fff;
+  border-radius: 5px;
 }
-label{
+label {
   font-weight: bold;
   color: $azul;
-  
-  span{
+  img {
+    vertical-align: middle;
+    width: 25px;
+    height: auto;
+  }
+
+  span {
     font-size: 0.8em;
     font-weight: normal;
   }
 }
-.desactivado{
+.desactivado {
   opacity: 0.2;
   pointer-events: none;
 }
-.activate{
+.activate {
   opacity: 1;
-  pointer-events:auto;
+  pointer-events: auto;
 }
