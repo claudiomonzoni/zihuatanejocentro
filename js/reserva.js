@@ -1,7 +1,7 @@
 import moment from "moment";
 // import "moment/locale/es";
 
-if(window.location.pathname === "/index.html"){
+if(window.location.pathname === "/"){
   import ("moment/locale/es")
   .then((lang)=>{
     return lang
@@ -112,7 +112,7 @@ const envio = (h2, whats, llega, sale) => {
   %0aComentarios:%20
   `;
   
-  if(window.location.pathname === "/index.html"){
+  if(window.location.pathname === "/"){
     btncotizar.href = url;
   }else{
     btncotizar.href = urlEn;
