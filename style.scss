@@ -260,26 +260,35 @@ h1 {
   .bandeja {
     background-color: $beige;
     margin: 0;
-    padding: 25vh 0;
-    @include hd {
-      padding: 10vh 0;
-    }
+    padding: 25vh 15%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    h2 {
+      padding-bottom: 2rem;
+      flex: 1 0 70%;
+      display: block-inline;
+    }
     ul {
       list-style: disc;
       columns: 2;
-      width: 70%;
       column-gap: 2rem;
       li {
         color: $azulOscuro;
       }
     }
+    @include hd {
+      padding: 10vh 15%;
+  
+    }
     @include cel {
-      padding: 8vh 1rem;
+      padding: 8vh 3rem;
       ul {
         columns: 1;
+      }
+      li{
+        padding-top: 0.8rem;
       }
     }
   }
@@ -327,6 +336,9 @@ h1 {
       padding: 8vh 0;
       ul {
         columns: 1;
+      }
+      li{
+        padding-top: 0.8rem;
       }
     }
   }
@@ -466,6 +478,7 @@ h1 {
   border-top-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
   background: url("img/fondo-azul.jpg") no-repeat $azulOscuro;
+  background-size: cover;
   color: #fff;
   display: flex;
   @include cel {
@@ -474,9 +487,11 @@ h1 {
     padding: 3rem 0;
   }
   justify-content: center;
-  align-items: center;
-  height: 30vh;
-  padding: 0 4rem;
+  // min-height: 40vh;
+  padding: 5rem 4rem;
+  h3{
+    padding-bottom: 1rem;
+  }
   a {
     color: #fff;
   }

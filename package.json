@@ -21,7 +21,6 @@
     "mm": "^3.2.0",
     "modulo": "0.0.3",
     "moment": "^2.29.1",
-    "parcel-plugin-remove-index-html": "^0.1.0",
     "wow": "0.0.6",
     "wowjs": "^1.1.3"
   }
