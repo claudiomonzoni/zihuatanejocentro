@@ -18,24 +18,24 @@ window.onload = function () {
 
 // importo gsap
 // // llamo gspa
-gsap.from(".logo, ul>li", {
+gsap.from("#hero .logo", {
   stagger: 0.1,
   x: 400,
   opacity: 0,
   duration: 1, //1 segundo
 });
-gsap.from(".punto", {
-  stagger: {
-    // wrap advanced options in an object
-    each: 0.3,
-    from: "left",
-    grid: "auto",
-    ease: "power2.inOut",
-  },
-  x: 50,
-  opacity: 0,
-  duration: 0.6, //1 segundo
-});
+// gsap.from(".punto", {
+//   stagger: {
+//     // wrap advanced options in an object
+//     each: 0.3,
+//     from: "left",
+//     grid: "auto",
+//     ease: "power2.inOut",
+//   },
+//   x: 50,
+//   opacity: 0,
+//   duration: 0.6, //1 segundo
+// });
 
 const WOW = require("wowjs");
 
