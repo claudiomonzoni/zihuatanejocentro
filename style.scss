@@ -216,6 +216,9 @@ h1 {
     p {
       width: 70%;
     }
+    p:last-child{
+      padding-bottom: 3rem;
+    }
   }
   .der {
     flex: 1 0 50%;
