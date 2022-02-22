@@ -666,3 +666,8 @@ label {
   opacity: 1;
   pointer-events: auto;
 }
+.miniemail{
+  @include cel{
+    font-size: 0.9rem;
+  }
+}
