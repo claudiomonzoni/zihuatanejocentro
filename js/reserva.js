@@ -2,7 +2,7 @@ import moment from "moment";
 // import "moment/locale/es";
 
 console.log(window.location.pathname);
-if(window.location.pathname === "/index.html"){
+if(window.location.pathname === "/"){
   import ("moment/locale/es")
   .then((lang)=>{
     return lang
